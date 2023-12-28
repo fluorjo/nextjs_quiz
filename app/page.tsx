@@ -7,7 +7,7 @@ export default function Home() {
         "max-w-7xl overflow-hidden rounded-xl p-4 lg:p-8 text-slate-700"
       }
     >
-      <h2>home page</h2>
+      <h2>Home page</h2>
     </div>
   );
 }
