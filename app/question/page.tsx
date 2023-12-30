@@ -10,7 +10,7 @@ const QuestionPage = () => {
         "flex flex-col space-y-4 md:space-y-8 p-4 lg:p-8"
       }
     >
-      {question.map((question) => (
+      {questions.map((question) => (
         <Question
           withId={false}
           checkEnabled={true}
@@ -18,6 +18,7 @@ const QuestionPage = () => {
           question={question}
         />
       ))}
+
     </div>
   );
 };
