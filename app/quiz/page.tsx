@@ -1,9 +1,7 @@
-import React from 'react'
-
+import React from "react";
+import QuizForm from "@/components/QuizForm";
 const QuizPage = () => {
-return (
-<div>QuizPage</div>
-)
-}
+  return <QuizForm />;
+};
 
-export default QuizPage
+export default QuizPage;
