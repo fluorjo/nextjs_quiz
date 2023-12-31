@@ -1,8 +1,9 @@
-'use client'
+"use client";
 
 import { IState } from "@/utils/types";
 import React, { useState } from "react";
 import Question from "./Question";
+import SelectState from "./SelectState";
 interface Props {
   states: IState[];
 }
@@ -11,6 +12,10 @@ const State = ({ states }: Props) => {
 
   return (
     <div>
+      <SelectState
+        states={states}
+        state={(value) => setState(value)}
+      />
       <div
         className={
           "flex flex-col space-y-4 md:space-y-8 pt-4"

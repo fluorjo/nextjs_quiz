@@ -1,9 +1,36 @@
-import React from 'react'
+import { IState } from "@/utils/types";
+import React from "react";
 
-const SelectState = () => {
-return (
-<div>SelectState</div>
-)
+interface Props {
+  states: IState[];
+  state: (stateValue: number) => void;
 }
 
-export default SelectState
+const SelectState = ({
+  states,
+  state,
+}: Props) => {
+  return (
+    <select
+      className={`mt-1 block w-full rounded-md border border-gray-300 
+    bg-white py-2 px-3 shadow-sm focus:border-indigo-500
+    focus:outline-none focus:ring-indigo-500 sm:text-sm`}
+      name=""
+      id=""
+      onChange={(e) =>
+        state(Number(e.target.value))
+      }
+    >
+      {states.map((state) => (
+        <option
+          value={state.id - 1}
+          key={state.id}
+        >
+          {state.title}
+        </option>
+      ))}
+    </select>
+  );
+};
+
+export default SelectState;
