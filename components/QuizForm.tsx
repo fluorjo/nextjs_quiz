@@ -114,6 +114,41 @@ const QuizForm = () => {
           </div>
         </div>
       )}
+
+      {quizEnded && (
+        <div className="bg-slate-50 p-8 rounded-xl shadow">
+          <div className="text-4xl font-semibold mb-8">
+            result
+          </div>
+          <div>
+            <span className="font-bold">
+              {questions.length}
+            </span>{" "}
+            questions, {" "}
+            <span
+              className={`font-bold ${
+                passed()
+                  ? "text-green-600"
+                  : "text-red-600"
+              }`}
+            >
+              {answers.filter((a) => a).length}
+            </span>{" "}
+correct answer.
+          </div>
+          <div className="my-4">
+            {passed()
+              ? "pass"
+              : "fail"}
+          </div>
+          <button
+            onClick={newStart}
+            className={`my-4 px-8 py-2 text-white w-full rounded-lg shadow bg-blue-600 hover:bg-blue-500`}
+          >
+start new test
+          </button>
+        </div>
+      )}
     </div>
   );
 };
